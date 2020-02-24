@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import Manage from '../views/manage.vue'
 
 const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-return routerPush.call(this, location).catch(error=> console.log(error))
+  return routerPush.call(this, location).catch(error => console.log(error))
 }
 
 // 1.应用插件
@@ -14,42 +14,36 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/Login',
-    name: 'login',
+    name: 'LOGIN',
     component: Login
   },
   {
+    path: '/manage',
+    name: '',
+    component: Manage,
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: ()=>import(/* webpackChunkName: "Manage" */ "@/views/Home.vue")
+      },
+      {
+        path: '/manage/table',
+        name: 'table',
+        component: ()=>import(/* webpackChunkName: "table" */ "@/views/table.vue")
+      },
+    ]
+  },
+  {
     path: '*',
-    component: ()=>import( /* webpackChunkName: "about" */ "@/views/404.vue")
-  }
-]
-export const asyncRouts = [
-  {
-    path: '/about',
-    component: () => import( /* webpackChunkName: "about" */ "@/views/About.vue"),
-    meta: {
-      title: "yes",
-      role:["a"]
-    }
-  },
-  {
-    path: '/other',
-    component: () => import( /* webpackChunkName: "other" */ "@/views/other.vue"),
-    meta: {
-      title: "yes",
-      role:["a","b"]
-    }
+    component: () => import( /* webpackChunkName: "about" */ "@/views/404.vue")
   },
 ]
+
 // 2.创建实例
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
 export default router

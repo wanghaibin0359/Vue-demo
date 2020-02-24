@@ -10,7 +10,7 @@ function resolve(dir) {
 module.exports = {
     lintOnSave: false,
     publicPath:  process.env.NODE_ENV==="production"?"":"", // 部署应用包时的基本 URL
-    outputDir:"./src/server/public",
+    outputDir: "./src/server/public",
     devServer: {
         port,
        // before,
