@@ -43,7 +43,7 @@
                     <span slot="title">{{isCollapse?'展开':'折叠'}}</span>
                 </el-menu-item>
             </el-menu>
-            <el-col style="height: 100%;min-width:100rem;overflow-x:scroll;">
+            <el-col style="height: 100%;overflow-x:scroll;">
                 <head-top></head-top>
                 <router-view></router-view>
             </el-col>
