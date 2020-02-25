@@ -1,6 +1,6 @@
 <template>
     <el-pagination
-        class="float-right mr-3"
+        class="float-right  mt-2"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="currentPage"
