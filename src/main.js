@@ -10,15 +10,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import $ from 'jquery'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
-import svgicon from '@/components/svgicon'
-import headTop from '@/components/headTop'
-import axios from "@/utils/request"
 
+import axios from "@/utils/request"
+import "@/components/index"
 Vue.config.devtools = true;
 
 
-Vue.component("icon-svg", svgicon)
-Vue.component("head-top", headTop)
 Vue.config.productionTip = false
 
 Vue.use((Vue) => {
