@@ -43,10 +43,12 @@
                     <span slot="title">{{isCollapse?'展开':'折叠'}}</span>
                 </el-menu-item>
             </el-menu>
-            <el-col style="height: 100%;overflow-x:scroll;">
+            <div class="d-flex flex-column w-100 " style="height: 100%">
                 <head-top></head-top>
-                <router-view></router-view>
-            </el-col>
+                <el-main class="flex-full w-100 bg-white">
+                    <router-view></router-view>
+                </el-main>
+            </div>
         </el-row>
     </div>
 </template>
