@@ -30,7 +30,8 @@ const routes = [
       {
         path: '/manage/table',
         name: 'table',
-        component: ()=>import(/* webpackChunkName: "table" */ "@/views/table.vue")
+        component: () => import(/* webpackChunkName: "table" */ "@/views/table.vue"),
+        meta: ['添加数据', '表格展示'],
       },
     ]
   },
