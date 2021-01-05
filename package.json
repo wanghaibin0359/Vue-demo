@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "async-validator": "^3.2.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap4": "0.0.1-security",
     "core-js": "^3.4.3",
